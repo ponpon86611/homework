@@ -30,6 +30,6 @@ public class Ticket {
     public void printInfo()
     {
         calculatePrice();
-        System.out.print("Total tickets: " + ticketsCount + "\n" + "Round-trip: " + roundTrip + "\n" + "Total: " + totalPrice);
+        System.out.println("Total tickets: " + ticketsCount + "\n" + "Round-trip: " + roundTrip + "\n" + "Total: " + totalPrice);
     }
 }

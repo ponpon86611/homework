@@ -4,13 +4,18 @@ import java.util.*
 
 fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
-    print("Please enter number of tickets: ")
-    val ticketCount = scanner.nextInt()
-    print("How many round-trip tickets: ")
-    val roundTrip = scanner.nextInt()
-    val tickets = Tickets(ticketCount , roundTrip);
 
-    tickets.printInfo()
+    var ticketCount = 0;
+    while(ticketCount != -1){
+        print("Please enter number of tickets: ")
+        ticketCount = scanner.nextInt()
+        if(ticketCount == -1)
+            return
+        print("How many round-trip tickets: ")
+        val roundTrip = scanner.nextInt()
+        val tickets = Tickets(ticketCount , roundTrip);
+        tickets.printInfo()
+    }
 }
 
 
@@ -26,6 +31,6 @@ class Tickets(var ticketsCount:Int , var roundTrip : Int){
     fun printInfo()
     {
         calculatePrice()
-        print("Total tickets: " + ticketsCount + "\n" + "Round-trip: " + roundTrip + "\n" + "Total: " + totalPrice)
+        println("Total tickets: " + ticketsCount + "\n" + "Round-trip: " + roundTrip + "\n" + "Total: " + totalPrice)
     }
 }
